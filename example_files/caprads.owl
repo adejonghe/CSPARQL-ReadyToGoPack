@@ -1,0 +1,543 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://idlab.ugent.be/caprads/vocab#"
+     xml:base="http://idlab.ugent.be/caprads/vocab"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <owl:Ontology rdf:about="http://idlab.ugent.be/caprads/vocab#">
+        <owl:imports rdf:resource="http://www.opengis.net/ont/geosparql"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://idlab.ugent.be/caprads/vocab#impactedBy -->
+
+    <owl:ObjectProperty rdf:about="http://idlab.ugent.be/caprads/vocab#impactedBy">
+        <owl:inverseOf rdf:resource="http://idlab.ugent.be/caprads/vocab#occuringAt"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://idlab.ugent.be/caprads/vocab#occuringAt -->
+
+    <owl:ObjectProperty rdf:about="http://idlab.ugent.be/caprads/vocab#occuringAt">
+        <rdfs:domain rdf:resource="http://idlab.ugent.be/caprads/vocab#Incident"/>
+        <rdfs:range rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://idlab.ugent.be/caprads/vocab#properties -->
+
+    <owl:ObjectProperty rdf:about="http://idlab.ugent.be/caprads/vocab#properties">
+        <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+        <rdfs:range rdf:resource="http://idlab.ugent.be/caprads/vocab#Properties"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://idlab.ugent.be/caprads/vocab#course -->
+
+    <owl:DatatypeProperty rdf:about="http://idlab.ugent.be/caprads/vocab#course">
+        <rdfs:domain rdf:resource="http://idlab.ugent.be/caprads/vocab#Properties"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://idlab.ugent.be/caprads/vocab#destination -->
+
+    <owl:DatatypeProperty rdf:about="http://idlab.ugent.be/caprads/vocab#destination">
+        <rdfs:domain rdf:resource="http://idlab.ugent.be/caprads/vocab#Properties"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://idlab.ugent.be/caprads/vocab#dwt -->
+
+    <owl:DatatypeProperty rdf:about="http://idlab.ugent.be/caprads/vocab#dwt">
+        <rdfs:domain rdf:resource="http://idlab.ugent.be/caprads/vocab#Properties"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://idlab.ugent.be/caprads/vocab#elapsed -->
+
+    <owl:DatatypeProperty rdf:about="http://idlab.ugent.be/caprads/vocab#elapsed">
+        <rdfs:domain rdf:resource="http://idlab.ugent.be/caprads/vocab#Properties"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://idlab.ugent.be/caprads/vocab#evacuationRadius -->
+
+    <owl:DatatypeProperty rdf:about="http://idlab.ugent.be/caprads/vocab#evacuationRadius">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://idlab.ugent.be/caprads/vocab#Incident"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://idlab.ugent.be/caprads/vocab#flag -->
+
+    <owl:DatatypeProperty rdf:about="http://idlab.ugent.be/caprads/vocab#flag">
+        <rdfs:domain rdf:resource="http://idlab.ugent.be/caprads/vocab#Properties"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://idlab.ugent.be/caprads/vocab#gt_shiptype -->
+
+    <owl:DatatypeProperty rdf:about="http://idlab.ugent.be/caprads/vocab#gt_shiptype">
+        <rdfs:domain rdf:resource="http://idlab.ugent.be/caprads/vocab#Properties"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://idlab.ugent.be/caprads/vocab#heading -->
+
+    <owl:DatatypeProperty rdf:about="http://idlab.ugent.be/caprads/vocab#heading">
+        <rdfs:domain rdf:resource="http://idlab.ugent.be/caprads/vocab#Properties"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://idlab.ugent.be/caprads/vocab#l_fore -->
+
+    <owl:DatatypeProperty rdf:about="http://idlab.ugent.be/caprads/vocab#l_fore">
+        <rdfs:domain rdf:resource="http://idlab.ugent.be/caprads/vocab#Properties"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://idlab.ugent.be/caprads/vocab#lat -->
+
+    <owl:DatatypeProperty rdf:about="http://idlab.ugent.be/caprads/vocab#lat">
+        <rdfs:domain rdf:resource="http://idlab.ugent.be/caprads/vocab#Properties"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://idlab.ugent.be/caprads/vocab#length -->
+
+    <owl:DatatypeProperty rdf:about="http://idlab.ugent.be/caprads/vocab#length">
+        <rdfs:domain rdf:resource="http://idlab.ugent.be/caprads/vocab#Properties"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://idlab.ugent.be/caprads/vocab#lon -->
+
+    <owl:DatatypeProperty rdf:about="http://idlab.ugent.be/caprads/vocab#lon">
+        <rdfs:domain rdf:resource="http://idlab.ugent.be/caprads/vocab#Properties"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://idlab.ugent.be/caprads/vocab#radiusUnit -->
+
+    <owl:DatatypeProperty rdf:about="http://idlab.ugent.be/caprads/vocab#radiusUnit">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://idlab.ugent.be/caprads/vocab#Incident"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://idlab.ugent.be/caprads/vocab#rot -->
+
+    <owl:DatatypeProperty rdf:about="http://idlab.ugent.be/caprads/vocab#rot">
+        <rdfs:domain rdf:resource="http://idlab.ugent.be/caprads/vocab#Properties"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://idlab.ugent.be/caprads/vocab#shipId -->
+
+    <owl:DatatypeProperty rdf:about="http://idlab.ugent.be/caprads/vocab#shipId">
+        <rdfs:domain rdf:resource="http://idlab.ugent.be/caprads/vocab#Properties"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://idlab.ugent.be/caprads/vocab#shipName -->
+
+    <owl:DatatypeProperty rdf:about="http://idlab.ugent.be/caprads/vocab#shipName">
+        <rdfs:domain rdf:resource="http://idlab.ugent.be/caprads/vocab#Properties"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://idlab.ugent.be/caprads/vocab#shiptype -->
+
+    <owl:DatatypeProperty rdf:about="http://idlab.ugent.be/caprads/vocab#shiptype">
+        <rdfs:domain rdf:resource="http://idlab.ugent.be/caprads/vocab#Properties"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://idlab.ugent.be/caprads/vocab#speed -->
+
+    <owl:DatatypeProperty rdf:about="http://idlab.ugent.be/caprads/vocab#speed">
+        <rdfs:domain rdf:resource="http://idlab.ugent.be/caprads/vocab#Properties"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://idlab.ugent.be/caprads/vocab#timemillis -->
+
+    <owl:DatatypeProperty rdf:about="http://idlab.ugent.be/caprads/vocab#timemillis">
+        <rdfs:domain rdf:resource="http://idlab.ugent.be/caprads/vocab#Properties"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://idlab.ugent.be/caprads/vocab#timestamp -->
+
+    <owl:DatatypeProperty rdf:about="http://idlab.ugent.be/caprads/vocab#timestamp">
+        <rdfs:domain rdf:resource="http://idlab.ugent.be/caprads/vocab#Properties"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://idlab.ugent.be/caprads/vocab#w_left -->
+
+    <owl:DatatypeProperty rdf:about="http://idlab.ugent.be/caprads/vocab#w_left">
+        <rdfs:domain rdf:resource="http://idlab.ugent.be/caprads/vocab#Properties"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://idlab.ugent.be/caprads/vocab#width -->
+
+    <owl:DatatypeProperty rdf:about="http://idlab.ugent.be/caprads/vocab#width">
+        <rdfs:domain rdf:resource="http://idlab.ugent.be/caprads/vocab#Properties"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://idlab.ugent.be/caprads/vocab#BulkCarrier -->
+
+    <owl:Class rdf:about="http://idlab.ugent.be/caprads/vocab#BulkCarrier">
+        <rdfs:subClassOf rdf:resource="http://idlab.ugent.be/caprads/vocab#CargoShip"/>
+    </owl:Class>
+    
+
+
+    <!-- http://idlab.ugent.be/caprads/vocab#CargoShip -->
+
+    <owl:Class rdf:about="http://idlab.ugent.be/caprads/vocab#CargoShip">
+        <rdfs:subClassOf rdf:resource="http://idlab.ugent.be/caprads/vocab#Ship"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://idlab.ugent.be/caprads/vocab#properties"/>
+                <owl:someValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://idlab.ugent.be/caprads/vocab#shiptype"/>
+                        <owl:hasValue>Cargo</owl:hasValue>
+                    </owl:Restriction>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://idlab.ugent.be/caprads/vocab#ChemicalTanker -->
+
+    <owl:Class rdf:about="http://idlab.ugent.be/caprads/vocab#ChemicalTanker">
+        <rdfs:subClassOf rdf:resource="http://idlab.ugent.be/caprads/vocab#Tanker"/>
+    </owl:Class>
+    
+
+
+    <!-- http://idlab.ugent.be/caprads/vocab#CompanySite -->
+
+    <owl:Class rdf:about="http://idlab.ugent.be/caprads/vocab#CompanySite">
+        <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://idlab.ugent.be/caprads/vocab#ContainerShip -->
+
+    <owl:Class rdf:about="http://idlab.ugent.be/caprads/vocab#ContainerShip">
+        <rdfs:subClassOf rdf:resource="http://idlab.ugent.be/caprads/vocab#CargoShip"/>
+    </owl:Class>
+    
+
+
+    <!-- http://idlab.ugent.be/caprads/vocab#CrudeOilTanker -->
+
+    <owl:Class rdf:about="http://idlab.ugent.be/caprads/vocab#CrudeOilTanker">
+        <rdfs:subClassOf rdf:resource="http://idlab.ugent.be/caprads/vocab#Tanker"/>
+    </owl:Class>
+    
+
+
+    <!-- http://idlab.ugent.be/caprads/vocab#Dock -->
+
+    <owl:Class rdf:about="http://idlab.ugent.be/caprads/vocab#Dock">
+        <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://idlab.ugent.be/caprads/vocab#Fire -->
+
+    <owl:Class rdf:about="http://idlab.ugent.be/caprads/vocab#Fire">
+        <rdfs:subClassOf rdf:resource="http://idlab.ugent.be/caprads/vocab#Incident"/>
+        <owl:disjointWith rdf:resource="http://idlab.ugent.be/caprads/vocab#Leak"/>
+    </owl:Class>
+    
+
+
+    <!-- http://idlab.ugent.be/caprads/vocab#FishingVessel -->
+
+    <owl:Class rdf:about="http://idlab.ugent.be/caprads/vocab#FishingVessel">
+        <rdfs:subClassOf rdf:resource="http://idlab.ugent.be/caprads/vocab#Ship"/>
+    </owl:Class>
+    
+
+
+    <!-- http://idlab.ugent.be/caprads/vocab#GasLeak -->
+
+    <owl:Class rdf:about="http://idlab.ugent.be/caprads/vocab#GasLeak">
+        <rdfs:subClassOf rdf:resource="http://idlab.ugent.be/caprads/vocab#Leak"/>
+        <owl:disjointWith rdf:resource="http://idlab.ugent.be/caprads/vocab#OilLeak"/>
+    </owl:Class>
+    
+
+
+    <!-- http://idlab.ugent.be/caprads/vocab#GeneralCargo -->
+
+    <owl:Class rdf:about="http://idlab.ugent.be/caprads/vocab#GeneralCargo">
+        <rdfs:subClassOf rdf:resource="http://idlab.ugent.be/caprads/vocab#CargoShip"/>
+    </owl:Class>
+    
+
+
+    <!-- http://idlab.ugent.be/caprads/vocab#HeavyLoadCarrier -->
+
+    <owl:Class rdf:about="http://idlab.ugent.be/caprads/vocab#HeavyLoadCarrier">
+        <rdfs:subClassOf rdf:resource="http://idlab.ugent.be/caprads/vocab#CargoShip"/>
+    </owl:Class>
+    
+
+
+    <!-- http://idlab.ugent.be/caprads/vocab#Incident -->
+
+    <owl:Class rdf:about="http://idlab.ugent.be/caprads/vocab#Incident"/>
+    
+
+
+    <!-- http://idlab.ugent.be/caprads/vocab#LNGTanker -->
+
+    <owl:Class rdf:about="http://idlab.ugent.be/caprads/vocab#LNGTanker">
+        <rdfs:subClassOf rdf:resource="http://idlab.ugent.be/caprads/vocab#Tanker"/>
+    </owl:Class>
+    
+
+
+    <!-- http://idlab.ugent.be/caprads/vocab#LPGTanker -->
+
+    <owl:Class rdf:about="http://idlab.ugent.be/caprads/vocab#LPGTanker">
+        <rdfs:subClassOf rdf:resource="http://idlab.ugent.be/caprads/vocab#Tanker"/>
+    </owl:Class>
+    
+
+
+    <!-- http://idlab.ugent.be/caprads/vocab#Leak -->
+
+    <owl:Class rdf:about="http://idlab.ugent.be/caprads/vocab#Leak">
+        <rdfs:subClassOf rdf:resource="http://idlab.ugent.be/caprads/vocab#Incident"/>
+    </owl:Class>
+    
+
+
+    <!-- http://idlab.ugent.be/caprads/vocab#OilChemicalTanker -->
+
+    <owl:Class rdf:about="http://idlab.ugent.be/caprads/vocab#OilChemicalTanker">
+        <rdfs:subClassOf rdf:resource="http://idlab.ugent.be/caprads/vocab#Tanker"/>
+    </owl:Class>
+    
+
+
+    <!-- http://idlab.ugent.be/caprads/vocab#OilLeak -->
+
+    <owl:Class rdf:about="http://idlab.ugent.be/caprads/vocab#OilLeak">
+        <rdfs:subClassOf rdf:resource="http://idlab.ugent.be/caprads/vocab#Leak"/>
+    </owl:Class>
+
+
+
+    <!-- http://idlab.ugent.be/caprads/vocab#BrokenWindmill -->
+
+    <owl:Class rdf:about="http://idlab.ugent.be/caprads/vocab#BrokenWindmill">
+        <rdfs:subClassOf rdf:resource="http://idlab.ugent.be/caprads/vocab#Incident"/>
+    </owl:Class>
+    
+
+
+    <!-- http://idlab.ugent.be/caprads/vocab#PassengerShip -->
+
+    <owl:Class rdf:about="http://idlab.ugent.be/caprads/vocab#PassengerShip">
+        <rdfs:subClassOf rdf:resource="http://idlab.ugent.be/caprads/vocab#Ship"/>
+    </owl:Class>
+    
+
+
+    <!-- http://idlab.ugent.be/caprads/vocab#PleasureCraft -->
+
+    <owl:Class rdf:about="http://idlab.ugent.be/caprads/vocab#PleasureCraft">
+        <rdfs:subClassOf rdf:resource="http://idlab.ugent.be/caprads/vocab#Ship"/>
+    </owl:Class>
+    
+
+
+    <!-- http://idlab.ugent.be/caprads/vocab#Properties -->
+
+    <owl:Class rdf:about="http://idlab.ugent.be/caprads/vocab#Properties"/>
+    
+
+
+    <!-- http://idlab.ugent.be/caprads/vocab#Quay -->
+
+    <owl:Class rdf:about="http://idlab.ugent.be/caprads/vocab#Quay">
+        <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://idlab.ugent.be/caprads/vocab#RestrictedArea -->
+
+    <owl:Class rdf:about="http://idlab.ugent.be/caprads/vocab#RestrictedArea">
+        <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://idlab.ugent.be/caprads/vocab#RoRoCarrier -->
+
+    <owl:Class rdf:about="http://idlab.ugent.be/caprads/vocab#RoRoCarrier">
+        <rdfs:subClassOf rdf:resource="http://idlab.ugent.be/caprads/vocab#CargoShip"/>
+    </owl:Class>
+    
+
+
+    <!-- http://idlab.ugent.be/caprads/vocab#Ship -->
+
+    <owl:Class rdf:about="http://idlab.ugent.be/caprads/vocab#Ship">
+        <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://idlab.ugent.be/caprads/vocab#Tanker -->
+
+    <owl:Class rdf:about="http://idlab.ugent.be/caprads/vocab#Tanker">
+        <rdfs:subClassOf rdf:resource="http://idlab.ugent.be/caprads/vocab#Ship"/>
+    </owl:Class>
+    
+
+
+    <!-- http://idlab.ugent.be/caprads/vocab#Windmill -->
+
+    <owl:Class rdf:about="http://idlab.ugent.be/caprads/vocab#Windmill">
+        <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://idlab.ugent.be/caprads/vocab#fire -->
+
+    <owl:NamedIndividual rdf:about="http://idlab.ugent.be/caprads/fire">
+        <rdf:type rdf:resource="http://idlab.ugent.be/caprads/vocab#Fire"/>
+        <evacuationRadius rdf:datatype="http://www.w3.org/2001/XMLSchema#double">200.0</evacuationRadius>
+        <radiusUnit rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.opengis.net/def/uom/OGC/1.0/metre</radiusUnit>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://idlab.ugent.be/caprads/vocab#gasleak -->
+
+    <owl:NamedIndividual rdf:about="http://idlab.ugent.be/caprads/gasleak">
+        <rdf:type rdf:resource="http://idlab.ugent.be/caprads/vocab#GasLeak"/>
+        <evacuationRadius rdf:datatype="http://www.w3.org/2001/XMLSchema#double">250.0</evacuationRadius>
+        <radiusUnit rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.opengis.net/def/uom/OGC/1.0/metre</radiusUnit>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://idlab.ugent.be/caprads/vocab#oilleak -->
+
+    <owl:NamedIndividual rdf:about="http://idlab.ugent.be/caprads/oilleak">
+        <rdf:type rdf:resource="http://idlab.ugent.be/caprads/vocab#OilLeak"/>
+        <evacuationRadius rdf:datatype="http://www.w3.org/2001/XMLSchema#double">50.0</evacuationRadius>
+        <radiusUnit rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.opengis.net/def/uom/OGC/1.0/metre</radiusUnit>
+    </owl:NamedIndividual>
+
+
+
+    <!-- http://idlab.ugent.be/caprads/vocab#brokenwindmill -->
+
+    <owl:NamedIndividual rdf:about="http://idlab.ugent.be/caprads/brokenwindmill">
+        <rdf:type rdf:resource="http://idlab.ugent.be/caprads/vocab#BrokenWindmill"/>
+        <evacuationRadius rdf:datatype="http://www.w3.org/2001/XMLSchema#double">50000.0</evacuationRadius>
+        <radiusUnit rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.opengis.net/def/uom/OGC/1.0/metre</radiusUnit>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.3.20160319-0906) https://github.com/owlcs/owlapi -->
+

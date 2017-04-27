@@ -1,0 +1,22 @@
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>  
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#> 
+PREFIX geof: <http://www.opengis.net/def/function/geosparql/>
+PREFIX caprads: <http://idlab.ugent.be/caprads/vocab#>
+PREFIX f: <http://larkc.eu/csparql/sparql/jena/ext#>
+CONSTRUCT {
+	?f rdf:type geo:Feature . 
+	?f geo:hasGeometry ?x . 
+	?x geo:asWKT ?xWKT . 
+} 
+FROM STREAM <http://localhost:8114/TripleWave-transform/sgraph> [RANGE 1s STEP 1s] 
+FROM <http://localhost:8080/caprads/incidents_cs.rdf>
+FROM <http://localhost:8080/caprads/incidents_wm.rdf>
+FROM <http://localhost:8080/caprads/bedrijfspercelenhavengent.rdf>
+FROM <http://localhost:8080/caprads/windturbineshavengent.rdf>
+WHERE {  
+	?f rdf:type geo:Feature .
+	?f caprads:impactedBy ?incident .
+	?f geo:hasGeometry ?x . 
+	?x geo:asWKT ?xWKT . 
+}

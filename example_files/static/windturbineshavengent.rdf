@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns="http://www.opengis.net/kml/2.2"
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:xs="http://www.w3.org/TR/2008/REC-xml-20081126#"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:geo="http://www.opengis.net/ont/geosparql#"
+         xmlns:kml="http://www.opengis.net/kml/2.2">
+   <rdf:Description rdf:about="http://idlab.ugent.be/caprads/Windmill1">
+      <rdf:type rdf:resource="http://idlab.ugent.be/caprads/vocab#Windmill"/>
+      <rdfs:label/>
+      <geo:hasGeometry>
+         <rdf:Description rdf:about="http://idlab.ugent.be/caprads/Windmill/geometry/1">
+            <geo:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT(3.753141369473966 51.096899005526701)</geo:asWKT>
+         </rdf:Description>
+      </geo:hasGeometry>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://idlab.ugent.be/caprads/Windmill2">
+      <rdf:type rdf:resource="http://idlab.ugent.be/caprads/vocab#Windmill"/>
+      <rdfs:label/>
+      <geo:hasGeometry>
+         <rdf:Description rdf:about="http://idlab.ugent.be/caprads/Windmill/geometry/2">
+            <geo:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT(3.750005977981471 51.100794380240927)</geo:asWKT>
+         </rdf:Description>
+      </geo:hasGeometry>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://idlab.ugent.be/caprads/Windmill3">
+      <rdf:type rdf:resource="http://idlab.ugent.be/caprads/vocab#Windmill"/>
+      <rdfs:label/>
+      <geo:hasGeometry>
+         <rdf:Description rdf:about="http://idlab.ugent.be/caprads/Windmill/geometry/3">
+            <geo:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT(3.753524747352244 51.105317212227312)</geo:asWKT>
+         </rdf:Description>
+      </geo:hasGeometry>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://idlab.ugent.be/caprads/Windmill4">
+      <rdf:type rdf:resource="http://idlab.ugent.be/caprads/vocab#Windmill"/>
+      <rdfs:label/>
+      <geo:hasGeometry>
+         <rdf:Description rdf:about="http://idlab.ugent.be/caprads/Windmill/geometry/4">
+            <geo:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT(3.787798823930121 51.135695511576557)</geo:asWKT>
+         </rdf:Description>
+      </geo:hasGeometry>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://idlab.ugent.be/caprads/Windmill5">
+      <rdf:type rdf:resource="http://idlab.ugent.be/caprads/vocab#Windmill"/>
+      <rdfs:label/>
+      <geo:hasGeometry>
+         <rdf:Description rdf:about="http://idlab.ugent.be/caprads/Windmill/geometry/5">
+            <geo:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT(3.783574705090784 51.131712376063994)</geo:asWKT>
+         </rdf:Description>
+      </geo:hasGeometry>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://idlab.ugent.be/caprads/Windmill6">
+      <rdf:type rdf:resource="http://idlab.ugent.be/caprads/vocab#Windmill"/>
+      <rdfs:label/>
+      <geo:hasGeometry>
+         <rdf:Description rdf:about="http://idlab.ugent.be/caprads/Windmill/geometry/6">
+            <geo:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT(3.778117260609619 51.149580861995553)</geo:asWKT>
+         </rdf:Description>
+      </geo:hasGeometry>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://idlab.ugent.be/caprads/Windmill7">
+      <rdf:type rdf:resource="http://idlab.ugent.be/caprads/vocab#Windmill"/>
+      <rdfs:label/>
+      <geo:hasGeometry>
+         <rdf:Description rdf:about="http://idlab.ugent.be/caprads/Windmill/geometry/7">
+            <geo:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT(3.773075066907494 51.148924817916928)</geo:asWKT>
+         </rdf:Description>
+      </geo:hasGeometry>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://idlab.ugent.be/caprads/Windmill8">
+      <rdf:type rdf:resource="http://idlab.ugent.be/caprads/vocab#Windmill"/>
+      <rdfs:label/>
+      <geo:hasGeometry>
+         <rdf:Description rdf:about="http://idlab.ugent.be/caprads/Windmill/geometry/8">
+            <geo:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT(3.76799686854171 51.148523780975012)</geo:asWKT>
+         </rdf:Description>
+      </geo:hasGeometry>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://idlab.ugent.be/caprads/Windmill9">
+      <rdf:type rdf:resource="http://idlab.ugent.be/caprads/vocab#Windmill"/>
+      <rdfs:label/>
+      <geo:hasGeometry>
+         <rdf:Description rdf:about="http://idlab.ugent.be/caprads/Windmill/geometry/9">
+            <geo:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT(3.757740486686382 51.146231663752459)</geo:asWKT>
+         </rdf:Description>
+      </geo:hasGeometry>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://idlab.ugent.be/caprads/Windmill10">
+      <rdf:type rdf:resource="http://idlab.ugent.be/caprads/vocab#Windmill"/>
+      <rdfs:label/>
+      <geo:hasGeometry>
+         <rdf:Description rdf:about="http://idlab.ugent.be/caprads/Windmill/geometry/10">
+            <geo:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT(3.762702675275939 51.147036711739936)</geo:asWKT>
+         </rdf:Description>
+      </geo:hasGeometry>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://idlab.ugent.be/caprads/Windmill11">
+      <rdf:type rdf:resource="http://idlab.ugent.be/caprads/vocab#Windmill"/>
+      <rdfs:label/>
+      <geo:hasGeometry>
+         <rdf:Description rdf:about="http://idlab.ugent.be/caprads/Windmill/geometry/11">
+            <geo:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT(3.76677960579459 51.165427260632761)</geo:asWKT>
+         </rdf:Description>
+      </geo:hasGeometry>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://idlab.ugent.be/caprads/Windmill12">
+      <rdf:type rdf:resource="http://idlab.ugent.be/caprads/vocab#Windmill"/>
+      <rdfs:label/>
+      <geo:hasGeometry>
+         <rdf:Description rdf:about="http://idlab.ugent.be/caprads/Windmill/geometry/12">
+            <geo:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT(3.77159377893329 51.166991329681728)</geo:asWKT>
+         </rdf:Description>
+      </geo:hasGeometry>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://idlab.ugent.be/caprads/Windmill13">
+      <rdf:type rdf:resource="http://idlab.ugent.be/caprads/vocab#Windmill"/>
+      <rdfs:label/>
+      <geo:hasGeometry>
+         <rdf:Description rdf:about="http://idlab.ugent.be/caprads/Windmill/geometry/13">
+            <geo:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT(3.776719973853122 51.167823379241831)</geo:asWKT>
+         </rdf:Description>
+      </geo:hasGeometry>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://idlab.ugent.be/caprads/Windmill14">
+      <rdf:type rdf:resource="http://idlab.ugent.be/caprads/vocab#Windmill"/>
+      <rdfs:label/>
+      <geo:hasGeometry>
+         <rdf:Description rdf:about="http://idlab.ugent.be/caprads/Windmill/geometry/14">
+            <geo:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT(3.782733204775251 51.168620432220912)</geo:asWKT>
+         </rdf:Description>
+      </geo:hasGeometry>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://idlab.ugent.be/caprads/Windmill15">
+      <rdf:type rdf:resource="http://idlab.ugent.be/caprads/vocab#Windmill"/>
+      <rdfs:label/>
+      <geo:hasGeometry>
+         <rdf:Description rdf:about="http://idlab.ugent.be/caprads/Windmill/geometry/15">
+            <geo:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT(3.787305368831056 51.17013849871023)</geo:asWKT>
+         </rdf:Description>
+      </geo:hasGeometry>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://idlab.ugent.be/caprads/Windmill16">
+      <rdf:type rdf:resource="http://idlab.ugent.be/caprads/vocab#Windmill"/>
+      <rdfs:label/>
+      <geo:hasGeometry>
+         <rdf:Description rdf:about="http://idlab.ugent.be/caprads/Windmill/geometry/16">
+            <geo:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT(3.791828540226144 51.17092154381934)</geo:asWKT>
+         </rdf:Description>
+      </geo:hasGeometry>
+   </rdf:Description>
+</rdf:RDF>

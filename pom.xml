@@ -28,19 +28,75 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<!-- 
+		<parliamentDir>/home/adejonghe/Development/Parliament</parliamentDir>
+		 -->
 	</properties>
 
 	<dependencies>
 		<dependency>
 			<groupId>eu.larkc.csparql</groupId>
 			<artifactId>csparql-core</artifactId>
-			<version>0.9.5.1</version>
+			<!--version>0.9.5.1</version-->
+			<version>0.9.7</version>
+			<exclusions>
+				<exclusion>
+	        	   	 <groupId>org.apache.jena</groupId>
+	          	 	 <artifactId>jena-core</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.apache.jena</groupId>
+					<artifactId>jena-arq</artifactId>		
+				</exclusion>
+			</exclusions>
 		</dependency>
+		
+		<!-- 
 		<dependency>
 			<groupId>it.polimi.deib</groupId>
-			<artifactId>rsp-services-api</artifactId>
-			<version>0.4.5</version>
+			<artifactId>rsp-services-csparql</artifactId>
+			<version>0.5-SNAPSHOT</version>
 		</dependency>
+		
+		 -->
+		
+		<dependency>
+            <groupId>org.apache.jena</groupId>
+            <artifactId>jena-core</artifactId>
+            <version>2.12.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.jena</groupId>
+            <artifactId>jena-arq</artifactId>
+            <version>2.12.0</version>
+        </dependency>
+		
+		<!-- 
+		
+		<dependency>
+			<groupId>SpatialIndexProcessor</groupId>
+			<artifactId>SpatialIndexProcessor</artifactId>
+			<version>1.0.0</version>
+			<scope>system</scope>
+			<systemPath>${parliamentDir}/SpatialIndexProcessor.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>JenaParliament</groupId>
+			<artifactId>JenaParliament</artifactId>
+			<version>1.0.0</version>
+			<scope>system</scope>
+			<systemPath>${parliamentDir}/JenaParliament.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>com.vividsolutions</groupId>
+			<artifactId>jts</artifactId>
+			<version>1.9</version>
+			<scope>system</scope>
+			<systemPath>${parliamentDir}/jts-1.9.jar</systemPath>
+		</dependency>
+		
+		 -->
 	</dependencies>
 
 	<build>

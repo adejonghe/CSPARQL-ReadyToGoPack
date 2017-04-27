@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:caprads="http://idlab.ugent.be/caprads/vocab#">
+
+  <rdf:Description rdf:about="http://idlab.ugent.be/caprads/CompanySite14">
+    <caprads:impactedBy rdf:resource="http://idlab.ugent.be/caprads/fire"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://idlab.ugent.be/caprads/CompanySite211">
+    <caprads:impactedBy rdf:resource="http://idlab.ugent.be/caprads/gasleak"/>
+  </rdf:Description>
+
+</rdf:RDF>

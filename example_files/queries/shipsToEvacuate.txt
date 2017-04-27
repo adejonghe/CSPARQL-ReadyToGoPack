@@ -1,0 +1,35 @@
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>  
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#> 
+PREFIX geof: <http://www.opengis.net/def/function/geosparql/>
+PREFIX caprads: <http://idlab.ugent.be/caprads/vocab#>
+PREFIX f: <http://larkc.eu/csparql/sparql/jena/ext#>
+PREFIX units: <http://www.opengis.net/def/uom/OGC/1.0/>
+CONSTRUCT {
+	?s rdf:type geo:Feature . 
+	?s geo:hasGeometry ?x . 
+	?x geo:asWKT ?xWKT . 
+	?s caprads:properties ?p .
+	?p ?pred ?prop .
+} 
+FROM STREAM <http://localhost:8114/TripleWave-transform/sgraph> [RANGE 180s STEP 3s] 
+FROM <http://localhost:8080/caprads/incidents_wm.rdf>
+FROM <http://localhost:8080/caprads/windturbineshavengent.rdf>
+WHERE {  
+	?s rdf:type caprads:Ship .
+	?s rdf:type ?t .
+	?s geo:hasGeometry ?x . 
+	?x geo:asWKT ?xWKT .  
+	?s caprads:properties ?p . 
+	?p ?pred ?prop .
+	?f rdf:type geo:Feature .
+	?f caprads:impactedBy ?incident .
+	?f geo:hasGeometry ?y . 
+	?y geo:asWKT ?yWKT . 
+	?incident rdf:type caprads:Incident .
+	?incident caprads:evacuationRadius ?radius .
+	?incident caprads:radiusUnit ?unit .
+	{ SELECT ?id ( MAX ( f:timestamp (?z, caprads:shipId, ?id) ) AS ?ts ) WHERE { ?z caprads:shipId ?id } GROUP BY ?id }
+	FILTER ( f:timestamp (?s, rdf:type, ?t) = ?ts )
+	FILTER (geof:sfWithin(?xWKT, geof:buffer(?yWKT, ?radius, units:metre))) 
+}
