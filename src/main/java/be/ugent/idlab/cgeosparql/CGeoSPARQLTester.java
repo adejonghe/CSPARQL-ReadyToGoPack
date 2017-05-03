@@ -34,13 +34,13 @@ public class CGeoSPARQLTester {
 		
 		QUERIES.put("featuresWithIncident", new String[]{
 				"incidents_cs.rdf",
-				"incidents_wm.rdf",
+				"incidents_wt.rdf",
 				"bedrijfspercelenhavengent.rdf",
 				"windturbineshavengent.rdf"
 		});
 		
 		QUERIES.put("shipsToEvacuate", new String[]{
-				"incidents_wm.rdf",
+				"incidents_wt.rdf",
 				"windturbineshavengent.rdf"
 		});
 	}
@@ -61,12 +61,12 @@ public class CGeoSPARQLTester {
 			engine.initialize(true);							
 			
 			// Register new streams in the engine
-			CGeoSPARQLStreamer stream = new CGeoSPARQLStreamer("http://localhost:8114/TripleWave-transform/sgraph", 3000L);
+			CGeoSPARQLStreamer stream = new CGeoSPARQLStreamer("http://cgeosparql.idlab.ugent.be/caprads/sgraph", 3000L);
 			engine.registerStream(stream);
 
 			//Register static knowledge
 			for (String filename : QUERIES.get(TEST_QUERY)) {
-				engine.putStaticNamedModel("http://localhost:8080/caprads/" + filename, CsparqlUtils.serializeRDFFile("example_files/static/" + filename));
+				engine.putStaticNamedModel("http://cgeosparql.idlab.ugent.be/caprads/" + filename, CsparqlUtils.serializeRDFFile("example_files/static/" + filename));
 			}
 
 			// Register new query in the engine					
