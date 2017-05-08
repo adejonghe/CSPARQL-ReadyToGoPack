@@ -17,3 +17,9 @@ target/
 *.log
 *.DS_Store
 ._*
+indexes/
+master/
+resources.mem
+statements.mem
+uris.mem
+u2i.db
