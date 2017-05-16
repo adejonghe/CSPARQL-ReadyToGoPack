@@ -25,6 +25,12 @@
 			<layout>default</layout>
 		</repository>
 	</repositories>
+	
+	<properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <docker.image.prefix>caprads</docker.image.prefix>
+        <docker.image.name>csparql-readytopack</docker.image.name>
+    </properties>
 
 	<dependencies>	
 		
@@ -130,6 +136,62 @@
 					</execution>
 				</executions>
 			</plugin>
+			 
+			<plugin>
+                <groupId>com.spotify</groupId>
+                <artifactId>docker-maven-plugin</artifactId>
+                <version>0.4.13</version>
+                <configuration>
+                    <imageName>${docker.image.prefix}/${docker.image.name}</imageName>
+                   <baseImage>ubuntu</baseImage>
+                    
+					<entryPoint>["java", "-cp", "/parliament/*:/${project.build.finalName}.jar:/lib/*:/example_files/*:/log4j_configuration/*" , "be.ugent.idlab.cgeosparql.CGeoSPARQLTester"]</entryPoint>   
+                    
+                    <runs>
+                    	<run>apt-get -qq update &amp;&amp; apt-get -qq install -y openjdk-8-jre</run>
+                    </runs>        
+                    <resources>
+                        <resource>
+                            <targetPath>/</targetPath>
+                            <directory>${project.build.directory}</directory>
+                            <include>${project.build.finalName}.jar</include>
+                        </resource>
+                        <resource>
+                            <targetPath>/example_files</targetPath>
+                            <directory>${project.basedir}/example_files/</directory>
+                            <includes>
+                                <include>*/**</include>
+                            </includes>
+                        </resource>
+                        <resource>
+                            <targetPath>/log4j_configuration</targetPath>
+                            <directory>${project.basedir}/log4j_configuration/</directory>
+                            <includes>
+                                <include>*</include>
+                            </includes>
+                        </resource>
+                        <resource>
+                            <targetPath>/lib</targetPath>
+                            <directory>${project.build.directory}/lib</directory>
+                            <includes>
+                                <include>*.jar</include>
+                            </includes>
+                        </resource>
+                        <resource>
+                            <targetPath>/parliament</targetPath>
+                            <directory>${env.PARLIAMENT_LIB}</directory>
+                            <includes>
+                                <include>*</include>
+                            </includes>
+                        </resource>
+                    </resources>
+                    <env>
+                    	<LD_LIBRARY_PATH>/parliament</LD_LIBRARY_PATH>
+                    	<PARLIAMENT_CONFIG_PATH>/parliament</PARLIAMENT_CONFIG_PATH>
+                    </env>
+                </configuration>
+            </plugin>
+            
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-source-plugin</artifactId>

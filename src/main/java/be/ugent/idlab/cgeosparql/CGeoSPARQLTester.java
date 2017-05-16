@@ -47,14 +47,22 @@ public class CGeoSPARQLTester {
 	
 	private static final String TBOX = "example_files/caprads.owl";
 	
-	private static final String TEST_QUERY = "shipsToEvacuate";
+	private static final String TEST_QUERY = "allShips";
 
 	public static void main(String[] args) {
 
 		try {
-
+			
 			// Configure log4j logger for the csparql engine
 			PropertyConfigurator.configure("log4j_configuration/csparql_readyToGoPack_log4j.properties");
+			
+			String queryName = TEST_QUERY;
+			
+			if (args.length > 0) { 
+				queryName = args[0];
+			}
+			
+			logger.info("Running with query: " + queryName);
 			
 			// Initialize engine
 			CsparqlEngineImpl engine = new CsparqlEngineImpl();
@@ -65,13 +73,13 @@ public class CGeoSPARQLTester {
 			engine.registerStream(stream);
 
 			//Register static knowledge
-			for (String filename : QUERIES.get(TEST_QUERY)) {
+			for (String filename : QUERIES.get(queryName)) {
 				engine.putStaticNamedModel("http://cgeosparql.idlab.ugent.be/caprads/" + filename, CsparqlUtils.serializeRDFFile("example_files/static/" + filename));
 			}
 
 			// Register new query in the engine					
-			String query = readFileContent("example_files/queries/"+TEST_QUERY+".txt");
-			CsparqlQueryResultProxy c = engine.registerQuery("REGISTER STREAM " + TEST_QUERY +" AS " + query, false);
+			String query = readFileContent("example_files/queries/"+queryName+".txt");
+			CsparqlQueryResultProxy c = engine.registerQuery("REGISTER STREAM " + queryName +" AS " + query, false);
 
 			// Register observer
 			c.addObserver(new ConsoleFormatter());
