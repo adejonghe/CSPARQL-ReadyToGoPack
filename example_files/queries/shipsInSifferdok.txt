@@ -11,7 +11,7 @@ CONSTRUCT {
 	?f caprads:properties ?p .
 	?p ?pred ?prop .
 } 
-FROM STREAM <hhttp://cgeosparql.idlab.ugent.be/caprads/sgraph> [RANGE 180s STEP 3s] 
+FROM STREAM <http://cgeosparql.idlab.ugent.be/caprads/sgraph> [RANGE 180s STEP 3s] 
 FROM <http://cgeosparql.idlab.ugent.be/caprads/dokken.rdf> 
 WHERE {  
 	?f rdf:type caprads:Ship . 
