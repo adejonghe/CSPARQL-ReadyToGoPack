@@ -57,28 +57,33 @@ public class CGeoSPARQLTester {
 			PropertyConfigurator.configure("log4j_configuration/csparql_readyToGoPack_log4j.properties");
 			
 			String queryName = TEST_QUERY;
+			long sleepTime = 3000L;
 			
-			if (args.length > 0) { 
+			if (args.length == 2) { 
 				queryName = args[0];
+				sleepTime = new Long(args[1]);
 			}
 			
-			logger.info("Running with query: " + queryName);
+			logger.info("Running with query " + queryName + " with a sleep time of " + sleepTime + " milliseconds");
 			
 			// Initialize engine
 			CsparqlEngineImpl engine = new CsparqlEngineImpl();
 			engine.initialize(true);							
 			
 			// Register new streams in the engine
-			CGeoSPARQLStreamer stream = new CGeoSPARQLStreamer("http://cgeosparql.idlab.ugent.be/caprads/sgraph", 3000L);
+			CGeoSPARQLStreamer stream = new CGeoSPARQLStreamer("http://cgeosparql.idlab.ugent.be/caprads/sgraph", sleepTime);
 			engine.registerStream(stream);
 
 			//Register static knowledge
 			for (String filename : QUERIES.get(queryName)) {
+				logger.info("Loading file: " + filename);
 				engine.putStaticNamedModel("http://cgeosparql.idlab.ugent.be/caprads/" + filename, CsparqlUtils.serializeRDFFile("example_files/static/" + filename));
 			}
 
 			// Register new query in the engine					
-			String query = readFileContent("example_files/queries/"+queryName+".txt");
+			String queryPath  = "example_files/queries/"+queryName+".txt";
+			logger.info("Loading query: " + queryPath);
+			String query = readFileContent(queryPath);			
 			CsparqlQueryResultProxy c = engine.registerQuery("REGISTER STREAM " + queryName +" AS " + query, false);
 
 			// Register observer

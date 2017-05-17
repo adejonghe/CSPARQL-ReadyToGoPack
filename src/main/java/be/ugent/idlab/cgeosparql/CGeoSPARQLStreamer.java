@@ -1,8 +1,13 @@
 package be.ugent.idlab.cgeosparql;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.github.jsonldjava.core.JsonLdOptions;
 import com.github.jsonldjava.core.JsonLdProcessor;
@@ -27,10 +32,13 @@ import eu.larkc.csparql.cep.api.RdfQuadruple;
 import eu.larkc.csparql.cep.api.RdfStream;
 
 public class CGeoSPARQLStreamer extends RdfStream implements Runnable {
+	
+	private static Logger logger = LoggerFactory.getLogger(CGeoSPARQLStreamer.class);
 
 	private long sleepTime;	
 	private Model event;
 	private static final String EVENT_URL = "example_files/event.jsonld";
+	private static final String SHIP_OBSERVATIONS = "example_files/shipObservations.txt";
 
 	public CGeoSPARQLStreamer(String iri, long sleepTime) {
 		super(iri);
@@ -45,38 +53,52 @@ public class CGeoSPARQLStreamer extends RdfStream implements Runnable {
 		}
 	}
 
-	public void run() {
-
-		while (true) {
+	public void run() {	
 			
-			try {
-
+		try {
+			
+			BufferedReader reader = new BufferedReader(new FileReader(SHIP_OBSERVATIONS));
+			String line = "";
+			
+			logger.info("Start Streaming...");
+			
+			while ((line = reader.readLine()) != null) {
+				
+				String[] coordinates = line.split(",");
+				
 				long timestamp = System.currentTimeMillis();
-
+				
 				StmtIterator it = event.listStatements();
-
+	
 				while (it.hasNext()) {
 					Statement stmt = it.next();
 					Triple t = stmt.asTriple();
 					
-					String s = t.getSubject().toString().replaceAll("XYZ", String.valueOf(timestamp));
-					String p = t.getPredicate().toString().replaceAll("XYZ", String.valueOf(timestamp));
-					String o = t.getObject().toString().replaceAll("XYZ", String.valueOf(timestamp));
+					String s = replaceParameters(t.getSubject().toString(), timestamp, coordinates);
+					String p = replaceParameters(t.getPredicate().toString(), timestamp, coordinates);
+					String o = replaceParameters(t.getObject().toString(), timestamp, coordinates);
 					
 					RdfQuadruple q = new RdfQuadruple(s, p, o, timestamp);
 					put(q);
 				}
-
+	
 				Thread.sleep(sleepTime);
-
-			} catch (Exception e) {
-				e.printStackTrace();
 			}
+			
+			logger.info("Streaming ended ... No more data available");
+			
+			reader.close();
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 
 	}
+	
+	private static String replaceParameters(String txt, long timestamp, String[] coordinates) { 
+		return txt.replaceAll("TST", String.valueOf(timestamp)).replaceAll("LON", coordinates[0]).replaceAll("LAT", coordinates[1]);
+	}
 
-	public static Model deserializeJSON(String asJsonSerialization, JsonLdOptions options) {
+	private static Model deserializeJSON(String asJsonSerialization, JsonLdOptions options) {
 
 		Model model = ModelFactory.createDefaultModel();
 
