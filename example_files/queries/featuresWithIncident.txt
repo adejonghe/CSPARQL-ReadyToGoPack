@@ -9,7 +9,7 @@ CONSTRUCT {
 	?f geo:hasGeometry ?x . 
 	?x geo:asWKT ?xWKT . 
 } 
-FROM STREAM <http://cgeosparql.idlab.ugent.be/caprads/sgraph> [RANGE 1s STEP 1s] 
+FROM STREAM <http://cgeosparql.idlab.ugent.be/caprads/sgraph> [RANGE #WSs STEP #SSs] 
 FROM <http://cgeosparql.idlab.ugent.be/caprads/incidents_cs.rdf>
 FROM <http://cgeosparql.idlab.ugent.be/caprads/incidents_wt.rdf>
 FROM <http://cgeosparql.idlab.ugent.be/caprads/bedrijfspercelenhavengent.rdf>

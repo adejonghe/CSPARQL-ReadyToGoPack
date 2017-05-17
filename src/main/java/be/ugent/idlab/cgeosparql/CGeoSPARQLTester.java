@@ -58,20 +58,30 @@ public class CGeoSPARQLTester {
 			
 			String queryName = TEST_QUERY;
 			long sleepTime = 3000L;
+			int windowSize = 10;
+			int stepSize = 1;
+			int runs = 1;
 			
-			if (args.length == 2) { 
+			if (args.length == 5) { 
 				queryName = args[0];
 				sleepTime = new Long(args[1]);
+				windowSize = new Integer(args[2]);
+				stepSize = new Integer(args[3]);
+				runs = new Integer(args[4]);
 			}
 			
-			logger.info("Running with query " + queryName + " with a sleep time of " + sleepTime + " milliseconds");
+			logger.info("Running query " + queryName + " with \n"
+					+ "- an observation interval of " + sleepTime + " milliseconds \n"
+					+ "- a window size of " + windowSize + " seconds \n"
+					+ "- a step size of " + stepSize + " seconds \n"
+					+ "and feed stream " + runs  + " times");
 			
 			// Initialize engine
 			CsparqlEngineImpl engine = new CsparqlEngineImpl();
 			engine.initialize(true);							
 			
 			// Register new streams in the engine
-			CGeoSPARQLStreamer stream = new CGeoSPARQLStreamer("http://cgeosparql.idlab.ugent.be/caprads/sgraph", sleepTime);
+			CGeoSPARQLStreamer stream = new CGeoSPARQLStreamer("http://cgeosparql.idlab.ugent.be/caprads/sgraph", sleepTime, runs);
 			engine.registerStream(stream);
 
 			//Register static knowledge
@@ -84,6 +94,7 @@ public class CGeoSPARQLTester {
 			String queryPath  = "example_files/queries/"+queryName+".txt";
 			logger.info("Loading query: " + queryPath);
 			String query = readFileContent(queryPath);			
+			query = query.replaceAll("#WS", String.valueOf(windowSize)).replaceAll("#SS", String.valueOf(stepSize));
 			CsparqlQueryResultProxy c = engine.registerQuery("REGISTER STREAM " + queryName +" AS " + query, false);
 
 			// Register observer

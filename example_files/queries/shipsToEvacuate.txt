@@ -12,7 +12,7 @@ CONSTRUCT {
 	?s caprads:properties ?p .
 	?p ?pred ?prop .
 } 
-FROM STREAM <http://cgeosparql.idlab.ugent.be/caprads/sgraph> [RANGE 180s STEP 3s] 
+FROM STREAM <http://cgeosparql.idlab.ugent.be/caprads/sgraph> [RANGE #WSs STEP #SSs] 
 FROM <http://cgeosparql.idlab.ugent.be/caprads/incidents_wt.rdf>
 FROM <http://cgeosparql.idlab.ugent.be/caprads/windturbineshavengent.rdf>
 WHERE {  

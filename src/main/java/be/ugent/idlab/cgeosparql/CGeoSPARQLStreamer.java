@@ -35,14 +35,17 @@ public class CGeoSPARQLStreamer extends RdfStream implements Runnable {
 	
 	private static Logger logger = LoggerFactory.getLogger(CGeoSPARQLStreamer.class);
 
-	private long sleepTime;	
+	private long sleepTime = 0;	
+	private int runs = 0;
+	private int currentRunNbr = 0;
 	private Model event;
 	private static final String EVENT_URL = "example_files/event.jsonld";
 	private static final String SHIP_OBSERVATIONS = "example_files/shipObservations.txt";
 
-	public CGeoSPARQLStreamer(String iri, long sleepTime) {
+	public CGeoSPARQLStreamer(String iri, long sleepTime, int runs) {
 		super(iri);
 		this.sleepTime = sleepTime;
+		this.runs = runs;
 		this.event = ModelFactory.createDefaultModel();
 		
 		try {
@@ -53,8 +56,13 @@ public class CGeoSPARQLStreamer extends RdfStream implements Runnable {
 		}
 	}
 
-	public void run() {	
-			
+	@Override
+	public void run() {		
+		
+		currentRunNbr++;
+		
+		logger.info("Start run #" + currentRunNbr);
+		
 		try {
 			
 			BufferedReader reader = new BufferedReader(new FileReader(SHIP_OBSERVATIONS));
@@ -91,8 +99,12 @@ public class CGeoSPARQLStreamer extends RdfStream implements Runnable {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		
+		if (currentRunNbr < runs) {
+			run();
+		}
 
-	}
+	}	
 	
 	private static String replaceParameters(String txt, long timestamp, String[] coordinates) { 
 		return txt.replaceAll("TST", String.valueOf(timestamp)).replaceAll("LON", coordinates[0]).replaceAll("LAT", coordinates[1]);
