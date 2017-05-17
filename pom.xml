@@ -145,7 +145,7 @@
                     <imageName>${docker.image.prefix}/${docker.image.name}</imageName>
                    <baseImage>ubuntu</baseImage>
                     
-					<entryPoint>["java", "-cp", "/parliament/*:/${project.build.finalName}.jar:/lib/*:/example_files/*:/log4j_configuration/*" , "be.ugent.idlab.cgeosparql.CGeoSPARQLTester"]</entryPoint>   
+					<entryPoint>["java", "-Xms512m", "-Xmx1g", "-cp", "/parliament/*:/${project.build.finalName}.jar:/lib/*:/example_files/*:/log4j_configuration/*" , "be.ugent.idlab.cgeosparql.CGeoSPARQLTester"]</entryPoint>   
                     
                     <runs>
                     	<run>apt-get -qq update &amp;&amp; apt-get -qq install -y openjdk-8-jre</run>
