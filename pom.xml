@@ -149,7 +149,11 @@
                     
                     <runs>
                     	<run>apt-get -qq update &amp;&amp; apt-get -qq install -y openjdk-8-jre</run>
+                    	<run>mkdir /csv/</run>
                     </runs>        
+                    <volumes>
+                    	<volume>/csv</volume>
+                    </volumes>
                     <resources>
                         <resource>
                             <targetPath>/</targetPath>
