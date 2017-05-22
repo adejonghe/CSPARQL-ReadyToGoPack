@@ -149,11 +149,7 @@
                     
                     <runs>
                     	<run>apt-get -qq update &amp;&amp; apt-get -qq install -y openjdk-8-jre</run>
-                    	<run>mkdir /csv/</run>
                     </runs>        
-                    <volumes>
-                    	<volume>/csv</volume>
-                    </volumes>
                     <resources>
                         <resource>
                             <targetPath>/</targetPath>
@@ -179,13 +175,6 @@
                             <directory>${project.build.directory}/lib</directory>
                             <includes>
                                 <include>*.jar</include>
-                            </includes>
-                        </resource>
-                        <resource>
-                            <targetPath>/parliament</targetPath>
-                            <directory>${env.PARLIAMENT_LIB}</directory>
-                            <includes>
-                                <include>*</include>
                             </includes>
                         </resource>
                     </resources>
